@@ -42,5 +42,29 @@ public class Course {
 
     @ManyToOne()
     @JoinColumn(name = "review_id")
+    private Review review;
+
+    //metodos helper
+
+    public void addInstructor(User instructor){
+        this.instructor = instructor;
+        instructor.getCourses().add(this);
+
+    }
+
+    public void removeInstructor() {
+        if (this.instructor != null) {
+            this.instructor.getCourses().remove(this);
+            this.instructor = null;
+        }
+    }
+
+    public void addCategory(Category category){
+        this.categories = categories;
+        categories.add(categories);
+    }
+
+
+
 
 }
