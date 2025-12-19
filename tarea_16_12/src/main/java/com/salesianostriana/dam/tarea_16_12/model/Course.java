@@ -44,6 +44,8 @@ public class Course {
     @JoinColumn(name = "review_id")
     private Review review;
 
+    private CourseStatus courseStatus;
+
     //metodos helper
 
     public void addInstructor(User instructor){
@@ -59,9 +61,13 @@ public class Course {
         }
     }
 
-    public void addCategory(Category category){
-        this.categories = categories;
-        categories.add(categories);
+    public void addLesson(Lesson lesson){
+       this.lessons.add(lesson);
+
+    }
+
+    public void removeLesson(Lesson lesson){
+        this.lessons.remove(lesson);
     }
 
 

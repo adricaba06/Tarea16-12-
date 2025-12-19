@@ -22,6 +22,7 @@ public class User {
     private String name;
     private String email;
     private double average_grade;
+    private UserRole userRole;
 
     @OneToMany(mappedBy = "instructor")
     @Builder.Default
